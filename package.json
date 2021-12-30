@@ -21,6 +21,7 @@
   "homepage": "https://github.com/aremumahmud/beads_by_neeyah#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^6.1.3",
     "supertest": "^6.1.6"
   }
 }
