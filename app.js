@@ -12,6 +12,7 @@ var deleteRecord = require("./deleteRecord")
 */
 
 var app = express()
+app.use(require('body-parser').urlencoded({ extended: false }));
 app.listen(process.env.PORT || 2000)
 
 var appl;
