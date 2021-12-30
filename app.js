@@ -27,12 +27,12 @@ mongoose.connect(uri)
    app.get("/updateRecord", (req, res)=>{
     // res.send("hi")
     updateRecord(req,res)
-   })*/
+   })
 
    app.post("/addRecord",(req, res)=>{
      addRecord(req ,res)
    })
-/*
+
    app.get("/getRecord",(req ,res)=>{
      getRecord(req ,res)
    })
