@@ -4,12 +4,10 @@ var mongoose =require("mongoose")
 
 //var updateRecord = require("./updateRecord")
 var addRecord = require("./addRecord")
-/*
 var getRecord = require("./getRecord")
 var getAllRecords = require("./getAllRecord")
 var deleteRecord = require("./deleteRecord")
 
-*/
 
 var app = express()
 app.use(require('body-parser').urlencoded({ extended: false }));
@@ -24,16 +22,15 @@ mongoose.connect(uri)
    })
    .catch(err=>{console.log(err)})
    
-   /*
    app.get("/updateRecord", (req, res)=>{
     // res.send("hi")
     updateRecord(req,res)
-   })*/
+   })
 
    app.post("/addRecord",(req, res)=>{
      addRecord(req ,res)
    })
-/*
+
    app.get("/getRecord",(req ,res)=>{
      getRecord(req ,res)
    })
@@ -43,5 +40,5 @@ mongoose.connect(uri)
    app.get("/deleteRecord",(req, res)=>{
    //  res.send("hi")
      deleteRecord(req, res)
-   })*/
-app.get("/",(req,res)=>{res.send("hello"+appl)})
+   })
+app.get("/",(req,res)=>{res.send("hello"+process.env.URI)})
