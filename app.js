@@ -40,4 +40,4 @@ mongoose.connect(uri)
    //  res.send("hi")
      deleteRecord(req, res)
    })*/
-app.get("/",(req,res)=>{res.send(appl)})
+app.get("/",(req,res)=>{res.send("hello"+appl)})
