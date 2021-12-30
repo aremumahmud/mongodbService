@@ -4,7 +4,7 @@ var {
     serverId,
     FileFolderPath,
     FileRoutePath
-  } = req.query
+  } = req.body
   var fileRecord = new FileRecord()
  //-------test----
  console.log(req.query)
