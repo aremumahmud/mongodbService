@@ -25,8 +25,8 @@ mongoose.connect(uri)
    
    
    app.get("/updateRecord", (req, res)=>{
-     res.send("hi")
-    // updateRecord(req,res)
+    // res.send("hi")
+    updateRecord(req,res)
    })
 /*
    app.post("/addRecord",(req, res)=>{
