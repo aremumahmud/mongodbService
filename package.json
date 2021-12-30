@@ -1,24 +1,24 @@
 
 {
-  "name": "beadsbyneeyah-1",
+  "name": "mongodbService",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":" node app.js"
+    "start":" node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aremumahmud/beads_by_neeyah.git"
+    "url": "git+https://github.com/aremumahmud/mongodbService.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aremumahmud/beads_by_neeyah/issues"
+    "url": "https://github.com/aremumahmud/mongdbService/issues"
   },
-  "homepage": "https://github.com/aremumahmud/beads_by_neeyah#readme",
+  "homepage": "https://github.com/aremumahmud/mongodbService#readme",
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^6.1.3",
