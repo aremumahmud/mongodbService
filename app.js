@@ -14,7 +14,7 @@ app.use(require('body-parser').urlencoded({ extended: false }));
 app.listen(process.env.PORT || 2000)
 
 var appl;
-var uri = `mongodb://FileuploadService:aremu2003@cluster0-shard-00-00.brdt8.mongodb.net:27017,cluster0-shard-00-01.brdt8.mongodb.net:27017,cluster0-shard-00-02.brdt8.mongodb.net:27017/totalcare?ssl=true&replicaSet=atlas-cbfjj2-shard-0&authSource=admin&retryWrites=true&w=majority`
+var uri = process.env.URI
 mongoose.connect(uri)
     .then(res=>{
       console.log(res ,"connected")
@@ -41,4 +41,4 @@ mongoose.connect(uri)
    //  res.send("hi")
      deleteRecord(req, res)
    })
-app.get("/",(req,res)=>{res.send("hello"+process.env.URI)})
+app.get("/",(req,res)=>{res.send("hello"+appl)})
