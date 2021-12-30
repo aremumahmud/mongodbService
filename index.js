@@ -1,9 +1,20 @@
-var mongoose = require("mongoose")
-var express = require("express")
-var app = express()
-var os = require("os")
-app.listen(process.env.PORT || 2000)
+var cluster = require('cluster');
+var os = require('os');
+if(cluster.isMaster) {
+ var cpus = os.cpus().length
+ let worker;
+ //start as many children as the number of CPUs
+ for (var i = 0; i < cpus; i++) { 
+    cluster.fork();
+ }
 
-app.get("/" ,(req,res)=>{
-res.send("i am working "+process.pid+".  "+ os.cpus().length)
-})
+cluster.on('exit', function(worker, code) {
+    if(code != 0 && !worker.suicide) {
+        console.log('Worker crashed. Starting a new worker');
+        cluster.fork();
+    }
+});
+
+} else {
+ require('./app'); 
+}
