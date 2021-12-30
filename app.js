@@ -1,9 +1,10 @@
 
 var express = require("express")
 var mongoose =require("mongoose")
-/*
-var updateRecord = require("./updateRecord")
+
+//var updateRecord = require("./updateRecord")
 var addRecord = require("./addRecord")
+/*
 var getRecord = require("./getRecord")
 var getAllRecords = require("./getAllRecord")
 var deleteRecord = require("./deleteRecord")
@@ -22,11 +23,12 @@ mongoose.connect(uri)
    })
    .catch(err=>{console.log(err)})
    
-   /*
+   
    app.get("/updateRecord", (req, res)=>{
-     //res.send("hi")
-     updateRecord(req,res)
+     res.send("hi")
+    // updateRecord(req,res)
    })
+/*
    app.post("/addRecord",(req, res)=>{
      addRecord(req ,res)
    })
