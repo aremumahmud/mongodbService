@@ -3,7 +3,7 @@ var express = require("express")
 var mongoose =require("mongoose")
 
 //var updateRecord = require("./updateRecord")
-//var addRecord = require("./addRecord")
+var addRecord = require("./addRecord")
 /*
 var getRecord = require("./getRecord")
 var getAllRecords = require("./getAllRecord")
@@ -32,7 +32,7 @@ mongoose.connect(uri)
    app.post("/addRecord",(req, res)=>{
      addRecord(req ,res)
    })
-
+*//*
    app.get("/getRecord",(req ,res)=>{
      getRecord(req ,res)
    })
