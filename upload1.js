@@ -2,7 +2,7 @@ var FileRecord = require("./ServerFileRecord.Model.js")
 var testrec = require("./testdb")
 
 module.exports = function(FileFolderPath,FileRoutePath){
-  var fileRecord = testrec//new FileRecord()
+  var fileRecord = new FileRecord()
  //-------test----
   ///var fileRecord = FileRecord
   //------end-------
