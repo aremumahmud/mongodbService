@@ -1,31 +1,20 @@
-var FileRecord = require("./ServerFileRecord.Model.js")
+var process1 = require("./upload1")
+
+
 module.exports= function(req, res){
-var {
-    serverId,
-    FileFolderPath,
-    FileRoutePath
-  } = req.body
-  var fileRecord = new FileRecord()
- //-------test----
- console.log(req.query)
-  ///var fileRecord = FileRecord
-  //------end-------
-  fileRecord.serverId = serverId
-  fileRecord.FileRoutePath = FileRoutePath
-  fileRecord.FileFolderPath = FileFolderPath
-  fileRecord.save((err, record)=>{
-    if (err){
-      res.status(404)
-      res.json({
-        "error" : true,
-        "msg" : "network filesave err"
-      })
-    }else {
-      res.status(200)
-      res.send(JSON.stringify({
-           error : false,
-           record 
-        }))
-    }
-  })
+var datastr = req.query.data
+var space = req.query.space
+
+var data = JSON.parse(datastr)
+console.log(data)
+var ArrayTobeProcessed = data.processed.map(record=>{
+  return process1(space,record.file)
+})
+Promise.all(ArrayTobeProcessed).then(resp=>{
+  res.send(JSON.stringify(resp))
+})
+  
 }
+
+
+//localhost:3000/addRecord?data=["sup","hello","fuck"]&space=dtahy
