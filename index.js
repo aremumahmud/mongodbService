@@ -1,3 +1,4 @@
+const mySecret = process.env['URI']
 var cluster = require('cluster');
 var os = require('os');
 if(cluster.isMaster) {
