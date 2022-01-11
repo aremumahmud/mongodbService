@@ -11,6 +11,7 @@ module.exports = function(FileFolderPath,FileRoutePath){
   fileRecord.FileFolderPath = FileFolderPath
   fileRecord.save((err, record)=>{
     if (err){
+console.log(err)
       res({
         error : true,
         msg : "network filesave err"
